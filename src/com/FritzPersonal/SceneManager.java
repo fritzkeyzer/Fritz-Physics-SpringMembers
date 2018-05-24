@@ -23,7 +23,6 @@ public class SceneManager {
     public static void main(String[] args) {
         init();
 
-
         //create some objects...
 
         Joint a = new Joint(new Vector2D(0, 0), 1);
@@ -64,7 +63,7 @@ public class SceneManager {
 
 
         while (true) {
-            update(fixedDeltaTime);    //nS dt
+            update();
         }
     }
 
@@ -73,7 +72,8 @@ public class SceneManager {
         fixedDeltaTime = 0.000001 / detail;
     }
 
-    public static void update(double _dt) {
+    public static void update() {
+        double _dt = fixedDeltaTime;
         if (!init) {
             init();
         }
